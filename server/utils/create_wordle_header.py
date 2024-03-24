@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def main(source_location: Path):
+def create_wordle_header(source_location: Path):
     files = ["word_bank.txt", "valid_words.txt"]
 
     target_file = source_location / "src" / "wordle_database.hpp"
@@ -16,6 +16,19 @@ def main(source_location: Path):
                 for word in words:
                     t_file.write(f'    "{word.strip()}",\n')
                 t_file.write("};\n\n")
+
+
+def run_clang_format(source_location: Path):
+    import subprocess
+
+    subprocess.run(
+        ["clang-format", "-i", Path(source_location / "src" / "wordle_database.hpp")]
+    )
+
+
+def main(source_location: Path):
+    create_wordle_header(source_location)
+    run_clang_format(source_location)
 
 
 if __name__ == "__main__":
