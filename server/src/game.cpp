@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "wordle_database.hpp"
 #include <string>
 #include <unordered_map>
 #include <vector>
