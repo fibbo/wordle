@@ -1,5 +1,5 @@
 #include <array>
-const std::array<const char *, 2315> word_bank = {
+static constexpr std::array<const char *, 2315> word_bank = {
     "aback", "abase", "abate", "abbey", "abbot", "abhor", "abide", "abled",
     "abode", "abort", "about", "above", "abuse", "abyss", "acorn", "acrid",
     "actor", "acute", "adage", "adapt", "adept", "admin", "admit", "adobe",
@@ -292,7 +292,7 @@ const std::array<const char *, 2315> word_bank = {
     "zebra", "zesty", "zonal",
 };
 
-const std::array<const char *, 12972> valid_words = {
+static constexpr std::array<const char *, 12972> valid_words = {
     "aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "aback", "abacs",
     "abaft", "abaka", "abamp", "aband", "abase", "abash", "abask", "abate",
     "abaya", "abbas", "abbed", "abbes", "abbey", "abbot", "abcee", "abeam",
