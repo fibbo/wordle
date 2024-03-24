@@ -8,12 +8,14 @@
 
 namespace wordle {
 
+namespace {
 std::string_view getRandomWord() {
   std::random_device rd;
   std::mt19937 gen(rd());
   std::uniform_int_distribution<> dis(0, word_bank.size());
   return word_bank[dis(gen)];
 }
+} // namespace
 
 void Game::init() {
   // Initialize a random word from the database
