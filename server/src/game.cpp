@@ -25,6 +25,9 @@ void Game::init() {
   }
 }
 
+// This method is useful for testing
+void Game::init(const std::string_view &word) { word_ = word; }
+
 bool Game::finished() const { return finished_; }
 
 std::string Game::giveGuess(const std::string &guess) {

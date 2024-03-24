@@ -2,16 +2,16 @@
 #include <gtest/gtest.h>
 
 using namespace wordle;
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions) {
-  // Expect two strings not to be equal.
-  EXPECT_STRNE("hello", "world");
-  // Expect equality.
-  EXPECT_EQ(7 * 6, 42);
-}
 
 TEST(WordleTest, CreateGame) {
   Game game;
   game.init();
   EXPECT_FALSE(game.finished());
+}
+
+TEST(WordleTest, GiveCorrectGuess) {
+  Game game;
+  game.init("plate");
+  EXPECT_EQ(game.giveGuess("plate"), "*****");
+  EXPECT_TRUE(game.finished());
 }

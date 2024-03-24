@@ -12,6 +12,8 @@ public:
 
   // Set the word to guess
   void init();
+  void init(const std::string_view &word);
+
   bool finished() const;
 
   std::string giveGuess(const std::string &guess);
