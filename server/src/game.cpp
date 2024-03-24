@@ -1,13 +1,23 @@
 #include "game.hpp"
 #include "wordle_database.hpp"
+#include <random>
 #include <string>
+#include <string_view>
 #include <unordered_map>
 #include <vector>
 
 namespace wordle {
 
+std::string_view getRandomWord() {
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<> dis(0, word_bank.size());
+  return word_bank[dis(gen)];
+}
+
 void Game::init() {
-  word_ = "hello";
+  // Initialize a random word from the database
+  word_ = getRandomWord();
   for (const auto &c : word_) {
     characterFrequency_[c]++;
   }

@@ -1,3 +1,4 @@
+// Copyright [2024] Philipp Gloor
 
 #include <string>
 #include <unordered_map>
@@ -16,7 +17,7 @@ public:
   std::string giveGuess(const std::string &guess);
 
 private:
-  std::string word_;
+  std::string_view word_;
   bool finished_{false};
   std::unordered_map<char, int> characterFrequency_;
 };
